@@ -11,32 +11,40 @@
 
   </head>
 
-  <body>
+  <div class="container">
+    <div>
+      <input class="mx-4 mt-3 border-b border-grey-light w-1/2"
+             type="text"
+             id="input-filtro"
+             placeholder="Buscar">
+    </div>
 
-    <table class="text-left m-4"
-           style="border-collapse:collapse">
-      <tr class="bg-blue-500 text-white">
-        <th class="py-4 px-6 bg-grey-lighter font-sans font-medium text-sm text-grey border-b border-grey-light">
-          No.</th>
-        <th
-            class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
-          Nombre</th>
-        <th
-            class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
-          Apellido</th>
-        <th
-            class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
-          Email</th>
-      </tr>
-      <tbody id="table-data">
+    <body>
 
-      </tbody>
-    </table>
+      <table class="text-left  mt-2 m-4 w-full"
+             style="border-collapse:collapse">
+        <tr class="bg-blue-500 text-white">
+          <th class="py-4 px-6 bg-grey-lighter font-sans font-medium text-sm text-grey border-b border-grey-light">
+            No.</th>
+          <th
+              class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
+            Nombre</th>
+          <th
+              class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
+            Apellido</th>
+          <th
+              class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
+            Email</th>
+        </tr>
+        <tbody id="table-data">
+
+        </tbody>
+      </table>
+  </div>
 
 
 
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
   </body>
 
 </html>
