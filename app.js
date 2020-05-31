@@ -2,13 +2,34 @@
 (async () => {
   'use strict'
 
-  let datos = []
+  let datos = [];
   const filtrarDatosDebounce = debounce(filtrarDatos, 500);
 
   const $input = document.getElementById('input-filtro')
   $input.addEventListener('keyup', (event) => {
     filtrarDatosDebounce(event.target.value, [...datos])
   });
+
+  const $table = document.querySelector('table');
+  $table.addEventListener('click', (event) => {
+    const elemento = event.target;
+    const column = elemento.dataset['column']
+    const order = elemento.dataset['order']
+    let texto = elemento.innerText;
+    texto = texto.substring(0, texto.length - 1)
+
+    if (order === 'desc') {
+      elemento.setAttribute('data-order', 'asc')
+      datos = datos.sort((a, b) => a[column] > b[column] ? 1 : -1)
+      texto += '&#9660'
+    } else if (order === 'asc') {
+      elemento.setAttribute('data-order', 'desc')
+      datos = datos.sort((a, b) => a[column] < b[column] ? 1 : -1)
+      texto += '&#9650'
+    }
+    elemento.innerHTML = texto;
+    cargarTabla(datos)
+  })
 
   function filtrarDatos(parametro, datos) {
     const palabra = parametro.trim();

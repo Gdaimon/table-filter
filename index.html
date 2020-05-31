@@ -23,18 +23,25 @@
 
       <table class="text-left  mt-2 m-4 w-full"
              style="border-collapse:collapse">
-        <tr class="bg-blue-500 text-white">
-          <th class="py-4 px-6 bg-grey-lighter font-sans font-medium text-sm text-grey border-b border-grey-light">
+
+        <tr class="bg-blue-500 text-white cursor-pointer">
+
+          <th data-column="id"
+              data-order="desc"
+              class="py-4 px-6 bg-grey-lighter font-sans font-medium text-sm text-grey border-b border-grey-light">
             No.</th>
-          <th
+          <th data-column="first_name"
+              data-order="desc"
               class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
-            Nombre</th>
-          <th
+            Nombre &#9650</th>
+          <th data-column="last_name"
+              data-order="desc"
               class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
-            Apellido</th>
-          <th
+            Apellido &#9650</th>
+          <th data-column="email"
+              data-order="desc"
               class="py-4 px-6 bg-grey-lighter font-sans font-medium uppercase text-sm text-grey border-b border-grey-light">
-            Email</th>
+            Email &#9650</th>
         </tr>
         <tbody id="table-data">
 
