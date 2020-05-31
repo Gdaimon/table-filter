@@ -3,11 +3,12 @@
   'use strict'
 
   let datos = []
+  const filtrarDatosDebounce = debounce(filtrarDatos, 500);
 
   const $input = document.getElementById('input-filtro')
   $input.addEventListener('keyup', (event) => {
-    filtrarDatos(event.target.value, [...datos])
-  })
+    filtrarDatosDebounce(event.target.value, [...datos])
+  });
 
   function filtrarDatos(parametro, datos) {
     const palabra = parametro.trim();
@@ -60,6 +61,21 @@
       return new Promise((resolve, reject) => reject(e))
     }
   }
+
+  function debounce(funcion, tiempo) {
+    let timeoutId;
+    return function () {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+      const contexto = this;
+      const argumentos = arguments;
+      timeoutId = setTimeout(() => {
+        funcion.apply(contexto, argumentos)
+      }, tiempo)
+    }
+  }
+
 
   datos = await consultarDatos()
   cargarTabla(datos)
